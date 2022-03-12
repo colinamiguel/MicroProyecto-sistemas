@@ -1,13 +1,26 @@
-import { GridPeliculas } from "./GridPeliculas"
-import styles from './App.module.css'
+import { GridPeliculas } from "./Components/GridPeliculas";
+import styles from './Components/App.module.css';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import MovieDetails from "./Paginas/MovieDetails";
+import Home from './Paginas/Home';
+
 export function App(){
-    return <div>
+    return(    
+    <Router>
         <header>
-            <h1 className={styles.title}>Metro movies</h1>
+            <Link to='/'>
+                <h1 className={styles.title}>Metro movies</h1>
+            </Link>
         </header>
+
+        <Link to="/">Home</Link>
+        <Link to ="/movies">Peliculas</Link>
         <main>
-           <GridPeliculas></GridPeliculas>
+            <Routes>
+                <Route exact path="/movies/:movieId" element={<MovieDetails />}/>
+                <Route path="/" element={<Home/>}/>
+            </Routes>
         </main>
 
-    </div>
-}
+    </Router>
+)}
