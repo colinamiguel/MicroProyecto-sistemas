@@ -44,6 +44,7 @@ function Login() {
                 
                 <button className={styles.buttom}>Login</button>
                 <p className={styles.blackText}>Not registered?<Link to="/register" className={styles.formLink}>Register</Link></p>
+                <button onClick={handleGoogleSignIn}>Login with Google</button>
 
 
             </form>
