@@ -29,6 +29,7 @@ export default function MovieDetails() {
               <p> <strong>Genres: </strong>{movie.genres.map(genre => genre.name).join(', ')}</p>
               <p> <strong>Description: </strong> {movie.overview}</p>
               <p> <strong>Rating: </strong> {movie.vote_average} <span className={styles.imdb}>IMDb</span></p>
+              <p> <strong>Languages: </strong>{movie.spoken_languages.map(languages => languages.name).join(', ')}</p>
           </div>
       </div></>
   )
