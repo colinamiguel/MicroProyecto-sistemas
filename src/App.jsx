@@ -8,6 +8,7 @@ import {ProtectedRoute} from './Components/protectedRoute'
 
 // Providers
 import {AuthProvider} from './context/authContext'
+import { AllMovies } from './Components/allMovies';
 
 
 export function App(){
@@ -27,6 +28,11 @@ export function App(){
                     <Route path='/' element={
                         <ProtectedRoute>
                             <Home/>
+                        </ProtectedRoute>
+                    }/>
+                    <Route path='/all' element={
+                        <ProtectedRoute>
+                            <AllMovies/>
                         </ProtectedRoute>
                     }/>
                     <Route exact path="/movies/:movieId" element={

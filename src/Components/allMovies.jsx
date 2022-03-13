@@ -1,17 +1,16 @@
-
 import { useEffect, useState } from 'react';
 import styles from './GridPeliculas.module.css'
 import { MovieCard } from "./MovieCard";
-import {useNavigate} from 'react-router-dom'
+
 import { request } from '../utils/httpClient';
 import Nav from './nav';
 
-export function GridPeliculas(){
+export function AllMovies(){
 
 
     const [movies, setMovies]= useState([]);
 
-    const navigate = useNavigate()
+
     useEffect(() => {
         request("/discover/movie")
         .then((data) => {
@@ -19,19 +18,12 @@ export function GridPeliculas(){
         });
     },[]);
 
-    const handleSeeMore = async () => {
-        navigate('/all')
-    }
-
 
     return (
         <><Nav />
         <ul className={styles.gridPeliculas}>
-            {movies.slice(0, 8).map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+            {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
 
-        </ul>
-        <button onClick={handleSeeMore} className={styles.buttom}>See More</button>
-        </>
-        
+        </ul></>
     );
 }
