@@ -30,6 +30,10 @@ export default function MovieDetails() {
               <p> <strong>Description: </strong> {movie.overview}</p>
               <p> <strong>Rating: </strong> {movie.vote_average} <span className={styles.imdb}>IMDb</span></p>
               <p> <strong>Languages: </strong>{movie.spoken_languages.map(languages => languages.name).join(', ')}</p>
+              <p> <strong>Release date: </strong> {movie.release_date}</p>
+              <p> <strong>Status: </strong> {movie.status}</p>
+              <p> <strong>Budget: </strong> ${movie.budget}</p>
+              <p> <strong>Produced by: </strong>{movie.production_companies.map(companies => companies.name).join(', ')}</p>
           </div>
       </div></>
   )

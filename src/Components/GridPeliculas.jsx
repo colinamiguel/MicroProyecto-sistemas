@@ -30,7 +30,7 @@ export function GridPeliculas(){
             {movies.slice(0, 8).map((movie) => <MovieCard key={movie.id} movie={movie} />)}
 
         </ul>
-        <button onClick={handleSeeMore} className={styles.buttom}>See More</button>
+        <button onClick={handleSeeMore} className={styles.button}>See More</button>
         </>
         
     );

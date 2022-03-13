@@ -2,8 +2,6 @@
 // authContext
 import { useAuth } from '../context/authContext';
 
-// Router
-import {Link} from 'react-router-dom';
 
 // styles
 import styles from './nav.module.css'
