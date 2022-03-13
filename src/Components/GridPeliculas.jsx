@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './GridPeliculas.module.css'
 import { MovieCard } from "./MovieCard";
-import movies from "./movies.json";
+
 import { request } from '../utils/httpClient';
+import Nav from './nav';
 
 export function GridPeliculas(){
 
@@ -21,10 +22,10 @@ export function GridPeliculas(){
 
 
     return (
+        <><Nav />
         <ul className={styles.gridPeliculas}>
-            {movies.map((movie) => 
-            <MovieCard key={movie.id} movie={movie}/>)}
-          
-        </ul>
+            {movies.slice(0, 8).map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+
+        </ul></>
     );
 }
