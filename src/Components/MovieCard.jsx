@@ -10,6 +10,7 @@ export function MovieCard({movie}){
     <Link to={"/movies/" + movie.id}>
         <li className={styles.movieCard}>
             <img width={230} height={345} className={styles.movieImage} src={imageUrl} alt={movie.title}/>
+            <p className={styles.movieTitle}>{movie.title}</p>
         </li>
     </Link>
 )};
