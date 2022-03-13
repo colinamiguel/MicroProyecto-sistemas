@@ -22,7 +22,7 @@ export function AuthProvider ({children}) {
     const login = (email, password) => signInWithEmailAndPassword(auth, email, password)
     const loginWithGoogle = () => {
         const googleProvider = new GoogleAuthProvider()
-        signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider)
     }
     const logout = () => signOut(auth)
 
@@ -35,7 +35,7 @@ export function AuthProvider ({children}) {
     }, []);
 
     return (
-        <authContext.Provider value={{signup, login, user, logout, loading}}>
+        <authContext.Provider value={{signup, login, user, logout, loading, loginWithGoogle}}>
             {children}
         </authContext.Provider>
     )

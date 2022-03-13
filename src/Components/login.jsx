@@ -7,7 +7,6 @@ import {useAuth} from '../context/authContext'
 // Router
 import {useNavigate, Link} from 'react-router-dom'
 
-
 // Styles
 import styles from './auth.module.css'
 
@@ -16,7 +15,7 @@ function Login() {
         email: '',
         password: '',
     });
-    const {login} = useAuth()
+    const {login, loginWithGoogle} = useAuth()
     const navigate = useNavigate()
     const [error, setError] = useState();
 
@@ -34,6 +33,14 @@ function Login() {
             setError(error.code);
         }
     }
+
+    const handleGoogleSignIn = async () => {
+        await loginWithGoogle()
+        navigate('/')
+    }
+
+    const imageUrl = "https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png"
+
     return (
         <div className={styles.container} >
             {error && <p>{error}</p> }
@@ -43,11 +50,11 @@ function Login() {
                 <input type="password" name="password" id="password" placeholder='password' onChange={HandleChange} className={styles.big}/>
                 
                 <button className={styles.buttom}>Login</button>
-                <p className={styles.blackText}>Not registered?<Link to="/register" className={styles.formLink}>Register</Link></p>
-                <button onClick={handleGoogleSignIn}>Login with Google</button>
 
 
             </form>
+            <p className={styles.blackText}>Not registered?<Link to="/register" className={styles.formLink}>Register</Link></p>
+            <button onClick={handleGoogleSignIn} className={styles.buttom}>Login with Google <img width={15} height={15} src={imageUrl}/></button>
         </div>
     );
 }

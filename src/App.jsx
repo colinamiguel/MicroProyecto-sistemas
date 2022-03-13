@@ -4,11 +4,10 @@ import MovieDetails from "./Paginas/MovieDetails";
 import Home from './Paginas/Home';
 import Login from './Components/login';
 import Register from './Components/register';
-import ProtectectedRoute from './Components/protectedRoute'
+import {ProtectedRoute} from './Components/protectedRoute'
 
 // Providers
-import {AuthProvider, useAuth} from './context/authContext'
-import Nav from "./Components/nav";
+import {AuthProvider} from './context/authContext'
 
 
 export function App(){
@@ -25,10 +24,17 @@ export function App(){
                 <Routes>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/register" element={<Register/>}/>
-                    <ProtectectedRoute>
-                        <Route exact path="/movies/:movieId" element={<MovieDetails />}/>
-                        <Route path="/" element={<Home/>}/>
-                    </ProtectectedRoute>
+                    <Route path='/' element={
+                        <ProtectedRoute>
+                            <Home/>
+                        </ProtectedRoute>
+                    }/>
+                    <Route exact path="/movies/:movieId" element={
+                        <ProtectedRoute>
+                            <MovieDetails />
+                        </ProtectedRoute>
+                    }/>
+                    
                 </Routes>
             </main>
 

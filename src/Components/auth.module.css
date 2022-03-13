@@ -52,3 +52,14 @@
     color: black;
     text-align: end;
 }
+
+.buttom {
+    background-color: #912C22;
+    color: white;
+    border-radius: 2px;
+    transition: all 300ms;
+    padding: 20px;
+    width: 100%;
+    font-size: large;
+    border: 1px solid #912C22;
+}
