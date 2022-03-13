@@ -7,6 +7,8 @@ import { useAuth } from '../context/authContext';
 
 export default function Home() {
   return (
-    <GridPeliculas />
+    <div>
+      <GridPeliculas />
+    </div>
   )
 }

@@ -5,6 +5,7 @@ import { MovieCard } from "./MovieCard";
 import { request } from '../utils/httpClient';
 import Nav from './nav';
 import { useNavigate } from 'react-router-dom';
+import Search from '../Components/Search';
 
 export function AllMovies(){
 
@@ -35,7 +36,7 @@ export function AllMovies(){
 
     return (
         <>
-            <Nav />
+            <Nav /> <Search />
             <ul className={styles.gridPeliculas}>
                 {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
             </ul>
