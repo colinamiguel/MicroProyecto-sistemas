@@ -22,3 +22,10 @@
 .firstItem{
     margin-top: 0;
 }
+
+.imdb{
+    background-color: rgb(209, 174, 20);
+    color: black;
+    padding: 1px 4px;
+    margin-left: 3px;
+}

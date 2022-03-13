@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import movie from '../Components/movie.json';
 import styles from './MovieDetails.module.css';
 import { request } from '../utils/httpClient';
 import Nav from '../Components/nav';
@@ -29,6 +28,7 @@ export default function MovieDetails() {
               <p className={styles.firstItem}> <strong>Title:</strong> {movie.title}</p>
               <p> <strong>Genres: </strong>{movie.genres.map(genre => genre.name).join(', ')}</p>
               <p> <strong>Description: </strong> {movie.overview}</p>
+              <p> <strong>Rating: </strong> {movie.vote_average} <span className={styles.imdb}>IMDb</span></p>
           </div>
       </div></>
   )
