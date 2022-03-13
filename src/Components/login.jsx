@@ -53,8 +53,9 @@ function Login() {
 
 
             </form>
-            <p className={styles.blackText}>Not registered?<Link to="/register" className={styles.formLink}>Register</Link></p>
+            <br />
             <button onClick={handleGoogleSignIn} className={styles.buttom}>Login with Google <img width={15} height={15} src={imageUrl}/></button>
+            <p className={styles.blackText}>Not registered?<Link to="/register" className={styles.formLink}>Register</Link></p>
         </div>
     );
 }
